@@ -34,7 +34,6 @@ const carList: Car[] = [
 
 ReactDOM.render(
   <>
-    {/* React.createElement(ColourTool, Object.freeze({ colours: colourList })) */}
     <ColourTool colours={colourList} />
     <CarTool cars={carList} />
   </>,
