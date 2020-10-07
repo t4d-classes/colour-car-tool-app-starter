@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, memo } from 'react';
 
 import { NewColour } from '../models/colour';
 import { strToNaN } from '../utils';
@@ -19,6 +19,8 @@ const emptyColorForm = () => ({
 });
 
 export function ColourForm(props: ColourFormProps) {
+  performance.mark('colour form rendering');
+
   const [colourForm, setColourForm] = useState(emptyColorForm());
 
   const change = ({
@@ -66,3 +68,5 @@ export function ColourForm(props: ColourFormProps) {
     </form>
   );
 }
+
+export const ColourFormMemo = memo(ColourForm);
